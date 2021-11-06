@@ -5,8 +5,9 @@
 #
 # Then start this image, specifying the URL of the redis database:
 #
-# $ docker build -t onetimesecret .
-# $ docker run -p 3000:3000 -d \ -e ONETIMESECRET_REDIS_URL="redis://172.17.0.1:6379/0" onetimesecret
+# $ docker run -p 3000:3000 -d \
+#     -e ONETIMESECRET_REDIS_URL="redis://172.17.0.1:6379/0" \
+#     onetimesecret
 #
 # It will be accessible on http://localhost:3000.
 #
@@ -32,7 +33,6 @@ FROM ruby:2.3
 
 WORKDIR /usr/src/app
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler -v 2.2.15
 RUN bundle install --frozen --deployment --without=dev
 COPY . .
 CMD ["bundle", "exec", "thin", "-R", "config.ru", "start"]
