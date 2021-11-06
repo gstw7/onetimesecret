@@ -6,4 +6,7 @@ tmp/
 *.log
 *.txt
 .ruby-version
+Dockerfile_bkp
+Gemfile_bkp
+Gemfile_bkp.lock
 
