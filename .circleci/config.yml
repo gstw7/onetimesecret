@@ -13,7 +13,7 @@ jobs:
   ots-deploy:
     #circleci_ip_ranges: true
     docker:
-      - image: 'cimg/2.4.6'
+      - image: 'cimg/ruby:2.4.6'
     executor: ruby/default
     steps:
       - add_ssh_keys:
